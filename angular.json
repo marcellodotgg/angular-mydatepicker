@@ -19,10 +19,14 @@
             "main": "example/main.ts",
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.app.json",
-            "assets": ["example/favicon.ico", "example/assets"],
-            "styles": ["example/styles.css"],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "assets": [
+              "example/favicon.ico",
+              "example/assets"
+            ],
+            "styles": [
+              "example/styles.css"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
