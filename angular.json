@@ -19,13 +19,8 @@
             "main": "example/main.ts",
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.app.json",
-            "assets": [
-              "example/favicon.ico",
-              "example/assets"
-            ],
-            "styles": [
-              "example/styles.css"
-            ],
+            "assets": ["example/favicon.ico", "example/assets"],
+            "styles": ["example/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -115,7 +110,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/angular-mydatepicker/tsconfig.lib.json",
             "project": "projects/angular-mydatepicker/ng-package.json"
