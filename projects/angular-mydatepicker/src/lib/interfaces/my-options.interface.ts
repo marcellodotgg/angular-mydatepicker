@@ -1,15 +1,15 @@
-import {IMyDayLabels} from "./my-day-labels.interface";
-import {IMyMonthLabels} from "./my-month-labels.interface";
-import {IMyDate} from "./my-date.interface";
-import {IMyDateRange} from "./my-date-range.interface";
-import {IMyMarkedDates} from "./my-marked-dates.interface";
-import {IMyMarkedDate} from "./my-marked-date.interface";
-import {IMyDisabledDates} from "./my-disabled-dates.interface";
-import {IMyStyles} from "./my-styles.interface";
-import {IMyDivHostElement} from "./my-div-host-element.interface";
-import {IMyCalendarAnimation} from "./my-calendar-animation.interface";
-import {DefaultView} from "../enums/default-view.enum";
-import {Year} from "../enums/year.enum";
+import { DefaultView } from "../enums/default-view.enum";
+import { Year } from "../enums/year.enum";
+import { IMyCalendarAnimation } from "./my-calendar-animation.interface";
+import { IMyDateRange } from "./my-date-range.interface";
+import { IMyDate } from "./my-date.interface";
+import { IMyDayLabels } from "./my-day-labels.interface";
+import { IMyDisabledDates } from "./my-disabled-dates.interface";
+import { IMyDivHostElement } from "./my-div-host-element.interface";
+import { IMyMarkedDate } from "./my-marked-date.interface";
+import { IMyMarkedDates } from "./my-marked-dates.interface";
+import { IMyMonthLabels } from "./my-month-labels.interface";
+import { IMyStyles } from "./my-styles.interface";
 
 export interface IMyOptions {
   dateRange?: boolean;
@@ -44,8 +44,8 @@ export interface IMyOptions {
   openSelectorTopOfInput?: boolean;
   closeSelectorOnDateSelect?: boolean;
   closeSelectorOnDocumentClick?: boolean;
-  minYear?: Year;
-  maxYear?: Year;
+  minYear?: Year | number;
+  maxYear?: Year | number;
   showSelectorArrow?: boolean;
   appendSelectorToBody?: boolean;
   focusInputOnDateSelect?: boolean;
@@ -64,4 +64,4 @@ export interface IMyOptions {
   ariaLabelNextMonth?: string;
 }
 
-export interface IAngularMyDpOptions extends IMyOptions { }
+export interface IAngularMyDpOptions extends IMyOptions {}

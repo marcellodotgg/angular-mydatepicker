@@ -18,13 +18,8 @@
             "main": "example/main.ts",
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.app.json",
-            "assets": [
-              "example/favicon.ico",
-              "example/assets"
-            ],
-            "styles": [
-              "example/styles.css"
-            ],
+            "assets": ["example/favicon.ico", "example/assets"],
+            "styles": ["example/styles.css"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -79,14 +74,9 @@
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.spec.json",
             "karmaConfig": "example/karma.conf.js",
-            "styles": [
-              "example/styles.css"
-            ],
+            "styles": ["example/styles.css"],
             "scripts": [],
-            "assets": [
-              "example/favicon.ico",
-              "example/assets"
-            ]
+            "assets": ["example/favicon.ico", "example/assets"]
           }
         },
         "lint": {
@@ -96,9 +86,7 @@
               "example/tsconfig.app.json",
               "example/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -124,9 +112,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -138,7 +124,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular",
           "options": {
             "tsConfig": "projects/angular-mydatepicker/tsconfig.lib.json",
             "project": "projects/angular-mydatepicker/ng-package.json"
@@ -159,10 +145,7 @@
               "projects/angular-mydatepicker/tsconfig.lib.json",
               "projects/angular-mydatepicker/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "**/*.spec.ts"
-            ]
+            "exclude": ["**/node_modules/**", "**/*.spec.ts"]
           }
         }
       }
