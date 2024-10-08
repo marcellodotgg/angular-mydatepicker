@@ -13,20 +13,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/angular-mydatepicker-example",
             "index": "example/index.html",
             "main": "example/main.ts",
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.app.json",
-            "assets": [
-              "example/favicon.ico",
-              "example/assets"
-            ],
-            "styles": [
-              "example/styles.css"
-            ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "assets": ["example/favicon.ico", "example/assets"],
+            "styles": ["example/styles.css"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -39,7 +34,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -50,6 +44,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -79,26 +77,9 @@
             "polyfills": "example/polyfills.ts",
             "tsConfig": "example/tsconfig.spec.json",
             "karmaConfig": "example/karma.conf.js",
-            "styles": [
-              "example/styles.css"
-            ],
+            "styles": ["example/styles.css"],
             "scripts": [],
-            "assets": [
-              "example/favicon.ico",
-              "example/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "example/tsconfig.app.json",
-              "example/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "assets": ["example/favicon.ico", "example/assets"]
           }
         }
       }
@@ -118,15 +99,6 @@
             "production": {
               "devServerTarget": "angular-mydatepicker-example:serve:production"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
@@ -151,22 +123,8 @@
             "tsConfig": "projects/angular-mydatepicker/tsconfig.spec.json",
             "karmaConfig": "projects/angular-mydatepicker/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular-mydatepicker/tsconfig.lib.json",
-              "projects/angular-mydatepicker/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "**/*.spec.ts"
-            ]
-          }
         }
       }
     }
-  },
-  "defaultProject": "angular-mydatepicker-example"
+  }
 }
