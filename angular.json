@@ -11,17 +11,21 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "aot": true,
-            "outputPath": "dist/angular-mydatepicker-example",
+            "outputPath": {
+              "base": "dist/angular-mydatepicker-example"
+            },
             "index": "example/index.html",
-            "main": "example/main.ts",
-            "polyfills": "example/polyfills.ts",
+            "polyfills": [
+              "example/polyfills.ts"
+            ],
             "tsConfig": "example/tsconfig.app.json",
             "assets": ["example/favicon.ico", "example/assets"],
             "styles": ["example/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "browser": "example/main.ts"
           },
           "configurations": {
             "production": {
@@ -37,8 +41,6 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
