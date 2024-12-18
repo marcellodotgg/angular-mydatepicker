@@ -53,7 +53,7 @@
         (mouseenter)="onDayCellMouseEnter(d)"
         (mouseleave)="onDayCellMouseLeave()"
         [attr.tabindex]="!d.disabledDate.disabled ? 0 : -1"
-        role="button"
+        [attr.role]="'button'"
       >
         <span
           *ngIf="d.markedDate.marked && d.markedDate.color.length"
