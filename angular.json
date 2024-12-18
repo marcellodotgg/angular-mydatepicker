@@ -11,17 +11,19 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "aot": true,
-            "outputPath": "dist/angular-mydatepicker-example",
+            "outputPath": {
+              "base": "dist/angular-mydatepicker-example"
+            },
             "index": "example/index.html",
-            "main": "example/main.ts",
-            "polyfills": "example/polyfills.ts",
+            "polyfills": ["example/polyfills.ts"],
             "tsConfig": "example/tsconfig.app.json",
             "assets": ["example/favicon.ico", "example/assets"],
             "styles": ["example/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "browser": "example/main.ts"
           },
           "configurations": {
             "production": {
@@ -37,8 +39,6 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-mydatepicker-example:build"
+            "buildTarget": "angular-mydatepicker-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-mydatepicker-example:build:production"
+              "buildTarget": "angular-mydatepicker-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-mydatepicker-example:build"
+            "buildTarget": "angular-mydatepicker-example:build"
           }
         },
         "test": {
@@ -110,7 +110,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/angular-mydatepicker/tsconfig.lib.json",
             "project": "projects/angular-mydatepicker/ng-package.json"
