@@ -21,7 +21,7 @@
         (click)="onMonthCellClicked($event, m)"
         (keydown)="onMonthCellKeyDown($event, m)"
         [attr.tabindex]="!m.disabled ? 0 : -1"
-        role="button"
+        [attr.role]="'button'"
       >
         <span class="myDpMonthNbr" *ngIf="opts.showMonthNumber">{{
           m.nbr

@@ -21,7 +21,7 @@
         (click)="onYearCellClicked($event, y)"
         (keydown)="onYearCellKeyDown($event, y)"
         [attr.tabindex]="!y.disabled ? 0 : -1"
-        role="button"
+        [attr.role]="'button'"
       >
         <span
           class="myDpYearValue"
