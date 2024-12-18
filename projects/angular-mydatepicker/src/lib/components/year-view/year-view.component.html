@@ -19,9 +19,9 @@
         }"
         *ngFor="let y of yr"
         (click)="onYearCellClicked($event, y)"
-        role="button"
         (keydown)="onYearCellKeyDown($event, y)"
         [attr.tabindex]="!y.disabled ? 0 : -1"
+        role="button"
       >
         <span
           class="myDpYearValue"

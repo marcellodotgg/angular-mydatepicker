@@ -10,7 +10,6 @@
   <tbody>
     <tr *ngFor="let mr of months">
       <td
-        role="button"
         id="m_{{ m.row }}_{{ m.col }}"
         class="m_{{ m.row }}_{{ m.col }} myDpMonthcell"
         [ngClass]="{
@@ -22,6 +21,7 @@
         (click)="onMonthCellClicked($event, m)"
         (keydown)="onMonthCellKeyDown($event, m)"
         [attr.tabindex]="!m.disabled ? 0 : -1"
+        role="button"
       >
         <span class="myDpMonthNbr" *ngIf="opts.showMonthNumber">{{
           m.nbr
